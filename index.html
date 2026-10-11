@@ -9,8 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         :root {
-            --bg: #06050d;
-            --surface: #111223;
+            --bg: #05040a;
+            --surface: rgba(17, 18, 35, 0.4);
             --text: #e9ecf8;
             --muted: #bfc4da;
             --accent-violet: #9f5cff;
@@ -50,6 +50,21 @@
             text-shadow: 0 0 10px rgba(159, 92, 255, 0.5);
         }
 
+        /* CURSOR SPOTLIGHT */
+        .cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(159, 92, 255, 0.08) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
         /* NAVBAR */
         nav {
             position: fixed;
@@ -60,8 +75,8 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: rgba(6, 5, 13, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(5, 4, 10, 0.7);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -98,25 +113,84 @@
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            padding: 0 2rem;
+            padding: 6rem 2rem 2rem 2rem;
+            overflow: hidden;
         }
 
-        .hero-bg {
+        /* Animated Background Orbs */
+        .orb {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(159, 92, 255, 0.15) 0%, transparent 50%);
+            border-radius: 50%;
+            filter: blur(80px);
             z-index: -1;
+            opacity: 0.4;
+        }
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-violet);
+            top: -100px;
+            left: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-cyan);
+            bottom: 0;
+            right: -50px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+
+        /* PROFILE PICTURE */
+        .profile-wrapper {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 2;
+            border: 3px solid var(--bg);
+            background-color: var(--surface);
+        }
+
+        .glow-ring {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--accent-cyan), var(--accent-violet), var(--accent-magenta), var(--accent-cyan));
+            animation: spin 4s linear infinite;
+            z-index: 1;
+            filter: blur(2px);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5.5rem);
             line-height: 1.1;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, #fff 0%, #bfc4da 100%);
@@ -130,6 +204,7 @@
             height: 2.5rem;
             margin-bottom: 2rem;
             font-family: 'Syne', sans-serif;
+            font-weight: 600;
         }
 
         .hero-content p {
@@ -185,10 +260,10 @@
             border-radius: 2px;
         }
 
-        /* TIMELINE */
+        /* TIMELINE (Glassmorphism) */
         .timeline {
             position: relative;
-            border-left: 2px solid rgba(159, 92, 255, 0.3);
+            border-left: 2px solid rgba(159, 92, 255, 0.2);
             padding-left: 3rem;
             margin-left: 1rem;
         }
@@ -196,13 +271,25 @@
         .timeline-item {
             margin-bottom: 3.5rem;
             position: relative;
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(159, 92, 255, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
             left: -3.4rem;
-            top: 0.5rem;
+            top: 2rem;
             width: 16px;
             height: 16px;
             border-radius: 50%;
@@ -261,8 +348,9 @@
 
         .skill-category {
             background: var(--surface);
+            backdrop-filter: blur(12px);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
@@ -285,12 +373,12 @@
         }
 
         .skill-tag {
-            background: rgba(159, 92, 255, 0.15);
+            background: rgba(159, 92, 255, 0.1);
             color: #fff;
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-size: 0.85rem;
-            border: 1px solid rgba(159, 92, 255, 0.3);
+            border: 1px solid rgba(159, 92, 255, 0.2);
             transition: all 0.3s ease;
         }
 
@@ -298,6 +386,7 @@
             background: var(--accent-violet);
             color: #fff;
             box-shadow: 0 0 15px rgba(159, 92, 255, 0.5);
+            transform: scale(1.05);
         }
 
         /* STATS */
@@ -309,6 +398,7 @@
             text-align: center;
             padding: 3rem;
             background: var(--surface);
+            backdrop-filter: blur(12px);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -345,10 +435,19 @@
             gap: 0.5rem;
             font-size: 1.1rem;
             color: var(--text);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
         .contact-links a:hover {
             color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(55, 244, 255, 0.1);
         }
 
         footer {
@@ -359,38 +458,21 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* ANIMATIONS */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            section {
-                padding: 4rem 1.5rem;
-            }
-            .timeline {
-                padding-left: 1.5rem;
-            }
-            .timeline-item::before {
-                left: -1.9rem;
-            }
+            nav { padding: 1rem; }
+            .nav-links { display: none; }
+            section { padding: 4rem 1.5rem; }
+            .timeline { padding-left: 1.5rem; }
+            .timeline-item::before { left: -1.9rem; top: 1.5rem; }
+            .timeline-item { padding: 1.5rem; }
+            .cursor-glow { display: none; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Cursor Spotlight -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <nav>
         <div class="logo">R<span>.</span>B</div>
@@ -402,8 +484,16 @@
     </nav>
 
     <header class="hero">
-        <div class="hero-bg"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        
         <div class="hero-content">
+            <div class="profile-wrapper">
+                <div class="glow-ring"></div>
+                <!-- This looks for the profile.jpg you uploaded -->
+                <img src="profile.jpg" alt="Raajdeep Baishya" class="profile-pic">
+            </div>
+            
             <h1>Raajdeep Baishya</h1>
             <div class="typing-container" id="typing"></div>
             <p>Data Analyst with 6+ years of experience in Master Data Management, Power BI reporting, and driving efficiency through data-driven insights.</p>
@@ -519,7 +609,7 @@
 
     <section id="contact" class="contact-section">
         <h2 class="section-title reveal">Get In Touch</h2>
-        <p class="reveal" style="color: var(--muted); max-width: 600px; margin: 0 auto;">I'm open to opportunities in data analysis, MIS, and reporting roles.</p>
+        <p class="reveal" style="color: var(--muted); max-width: 600px; margin: 0 auto 2rem auto;">I'm open to opportunities in data analysis, MIS, and reporting roles.</p>
         <div class="contact-links reveal">
             <a href="mailto:BaishyaRaajdeep@gmail.com">📧 BaishyaRaajdeep@gmail.com</a>
             <a href="https://www.linkedin.com/in/raajdeep-baishya" target="_blank">🔗 LinkedIn Profile</a>
@@ -532,7 +622,18 @@
     </footer>
 
     <script>
-        // Typing Effect
+        // 1. Cursor Spotlight Effect (Zentry/Atelier style)
+        const cursorGlow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursorGlow, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+        // 2. Typing Effect
         const titles = ["Data Analyst", "MIS Specialist", "Power BI Expert", "Problem Solver"];
         let titleIndex = 0;
         let charIndex = 0;
@@ -566,17 +667,45 @@
         }
         type();
 
-        // Scroll Reveal Animation using GSAP
+        // 3. Cinematic Scroll Animations (Zoom in and fade up)
         gsap.registerPlugin(ScrollTrigger);
 
+        // Hero entrance animation
+        gsap.from(".profile-wrapper", {
+            scale: 0.5,
+            opacity: 0,
+            duration: 1.5,
+            ease: "elastic.out(1, 0.5)",
+            delay: 0.2
+        });
+
+        gsap.from(".hero-content h1", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        gsap.from(".hero-content p, .cta-btn", {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.8,
+            stagger: 0.2
+        });
+
+        // Scroll reveal for cards and timeline items
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach((el) => {
             gsap.fromTo(el, 
-                { opacity: 0, y: 50 },
+                { opacity: 0, y: 60, scale: 0.95 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 1,
+                    scale: 1,
+                    duration: 1.2,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: el,
