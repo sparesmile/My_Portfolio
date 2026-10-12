@@ -68,7 +68,6 @@
             line-height: 1.2;
             letter-spacing: 2px;
             font-weight: 400;
-            /* Reveal animation: starts fully hidden on the left, reveals to the right */
             clip-path: inset(-20% 100% -20% 0);
             animation: revealSignature 3.5s cubic-bezier(0.6, 0, 0.4, 1) forwards;
             text-shadow: 0 0 25px rgba(26, 83, 255, 0.5);
@@ -79,7 +78,6 @@
             100% { clip-path: inset(-20% 0 -20% 0); }
         }
 
-        /* Animated glowing "pen tip" that follows the reveal edge */
         .signature-container::after {
             content: '';
             position: absolute;
@@ -347,7 +345,7 @@
         @keyframes blink { 50% { opacity: 0; } }
 
         .hero-desc {
-            max-width: 640px;
+            max-width: 720px;
             margin: 0 auto 2.5rem auto;
             color: var(--muted);
             font-size: 1.05rem;
@@ -937,13 +935,13 @@
         <h1>Raajdeep Baishya</h1>
         <div class="typing-container" id="typing"></div>
         <p class="hero-desc">
-            6+ years turning raw data into clear, actionable stories.
-            Specialized in Master Data Management, Power BI reporting, and building
-            systems that help teams make faster, smarter decisions.
+            Results-driven Data Analyst with <strong>6+ years of experience</strong> in the cement and
+            manufacturing industry. Expert in Power BI dashboard development, sales analytics,
+            and MIS reporting — transforming complex datasets into actionable business insights.
         </p>
         <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">Get In Touch</a>
-            <a href="Raajdeep_Baishya_CV.pdf" class="btn btn-secondary" download>Download Resume ↓</a>
+            <a href="My_CV.pdf" class="btn btn-secondary" download>Download Resume ↓</a>
         </div>
     </header>
 
@@ -956,20 +954,21 @@
         <div class="about-grid">
             <div class="about-text reveal">
                 <p>
-                    I'm a <strong>Data Analyst</strong> with a strong background in the Master Data domain,
-                    specializing in Power BI, MS Excel, and data visualization. My work focuses on
-                    translating business requirements into technical solutions and maintaining
-                    data governance at scale.
+                    I'm a <strong>Data Analyst</strong> specializing in Power BI dashboard development,
+                    sales analytics, and MIS reporting within the cement and manufacturing industry.
+                    I have a proven track record of transforming complex datasets into
+                    actionable business insights.
                 </p>
                 <p>
-                    My process is simple: <strong>understand the stakeholder's need, reconcile the data,
-                    and deliver a report that improves efficiency.</strong> I've consistently improved
-                    reporting efficiency by 25% to 30% through collaboration and process standardization.
+                    My work has driven measurable impact — I've <strong>improved reporting efficiency by
+                    25–30%</strong> through automation and process standardization. I'm an expert in
+                    translating stakeholder requirements into technical solutions, with deep domain
+                    knowledge in cement sales operations, dealer network analytics, and market intelligence.
                 </p>
                 <p>
-                    I have hands-on experience managing tickets within SLAs, creating reporting
-                    dashboards, performing Gap Analysis and Root Cause Analysis, and collaborating
-                    with SMEs to support implementation projects.
+                    I'm adept at <strong>end-to-end analytics</strong> — from data cleaning and reconciliation
+                    to dashboard deployment and user training. I collaborate closely with Finance, Logistics,
+                    and regional sales teams to ensure single-source-of-truth reporting.
                 </p>
             </div>
             <div class="philosophy-quote reveal">
@@ -987,15 +986,17 @@
         </div>
         <div class="timeline">
             <div class="timeline-item reveal">
-                <div class="timeline-date"> October 2024 — Present</div>
-                <h3>Sales Analyst Executive</h3>
-                <div class="timeline-company">Star Cement Ltd</div>
+                <div class="timeline-date">2024 — Present</div>
+                <h3>Analyst</h3>
+                <div class="timeline-company">Star Cement Ltd.</div>
                 <ul>
-                    <li>Developed and executed GTM plans for high-growth markets with actionable insights.</li>
-                    <li>Analyzed sales data to improve sales performance and logistics through cross-functional collaboration.</li>
-                    <li>Measured team performance and analyzed the effectiveness of regional initiatives.</li>
-                    <li>Conducted training sessions to help users navigate dashboards and internal tools.</li>
-                    <li>Optimized channel structure and supported new dealer and sub-dealer development.</li>
+                    <li>Developed and deployed interactive Power BI dashboards to track sales KPIs, discount planning effectiveness, and volume targets across regional markets — enabling leadership to identify underperforming territories within 48 hours of data refresh.</li>
+                    <li>Built and maintained dealer and sub-dealer performance scorecards using Excel and Power BI, analyzing onboarding effectiveness, churn patterns, and regional dealer activity — insights used to revive inactive dealers and optimize channel structure.</li>
+                    <li>Designed GTM analytics models for high-growth markets, integrating sales data with logistics and pricing to generate actionable recommendations that supported strategic counter-actions.</li>
+                    <li>Automated recurring sales reports, reducing manual preparation time and improving reporting efficiency by an estimated 25–30%.</li>
+                    <li>Conducted walkthroughs and training sessions for frontline users and stakeholders on dashboard navigation and internal tools, improving data literacy across the sales organization.</li>
+                    <li>Collaborated cross-functionally with Finance, Logistics, and regional sales teams to resolve data inconsistencies and ensure single-source-of-truth reporting.</li>
+                    <li>Tracked and analyzed team performance metrics to measure the effectiveness of regional initiatives and training programs.</li>
                 </ul>
             </div>
             <div class="timeline-item reveal">
@@ -1047,9 +1048,9 @@
             </div>
             <div class="edu-card reveal">
                 <div class="edu-period">Higher Secondary</div>
-                <h3>Higher Secondary</h3>
+                <h3>HS in Science and Commerce</h3>
                 <div class="institution">Swadeshi Academy Jr College, Guwahati, Assam</div>
-                <div class="focus">Science stream</div>
+                <div class="focus">Science and Commerce stream</div>
             </div>
             <div class="edu-card reveal">
                 <div class="edu-period">Schooling</div>
@@ -1128,50 +1129,52 @@
             <div class="project-card tilt reveal">
                 <div class="coming-soon-badge">Coming Soon</div>
                 <div class="project-number">01 / DASHBOARD</div>
-                <h3>Automated Sales Dashboard</h3>
+                <h3>Sales KPI Dashboard — Star Cement</h3>
                 <p class="concept placeholder-text">
-                    Detailed case study coming soon. This project will describe the problem,
-                    approach, and impact of automating the sales reporting pipeline.
+                    A Power BI dashboard tracking sales KPIs, discount effectiveness, and volume
+                    targets across regional markets. Detailed case study coming soon.
                 </p>
                 <div class="project-tags">
                     <span class="project-tag">Power BI</span>
-                    <span class="project-tag">Excel</span>
+                    <span class="project-tag">DAX</span>
+                    <span class="project-tag">Power Query</span>
                 </div>
                 <div class="project-impact placeholder-text">
-                    Full impact metrics coming soon.
+                    Enables leadership to identify underperforming territories within 48 hours.
                 </div>
             </div>
             <div class="project-card tilt reveal">
                 <div class="coming-soon-badge">Coming Soon</div>
-                <div class="project-number">02 / GOVERNANCE</div>
-                <h3>Master Data Governance Framework</h3>
+                <div class="project-number">02 / SCORECARDS</div>
+                <h3>Dealer & Channel Performance Scorecards</h3>
                 <p class="concept placeholder-text">
-                    Detailed case study coming soon. This project will describe the change
-                    request workflow and the data quality improvements achieved.
+                    Dealer and sub-dealer performance scorecards built in Excel and Power BI,
+                    analyzing onboarding effectiveness, churn, and regional dealer activity.
                 </p>
                 <div class="project-tags">
                     <span class="project-tag">Excel</span>
-                    <span class="project-tag">Access</span>
-                    <span class="project-tag">Process Design</span>
+                    <span class="project-tag">Power BI</span>
+                    <span class="project-tag">Channel Analytics</span>
                 </div>
                 <div class="project-impact placeholder-text">
-                    Full impact metrics coming soon.
+                    Insights used to revive inactive dealers and optimize channel structure.
                 </div>
             </div>
             <div class="project-card tilt reveal">
                 <div class="coming-soon-badge">Coming Soon</div>
-                <div class="project-number">03 / OPTIMIZATION</div>
-                <h3>Cross-Functional Reporting Optimization</h3>
+                <div class="project-number">03 / GTM ANALYTICS</div>
+                <h3>GTM Analytics Model for High-Growth Markets</h3>
                 <p class="concept placeholder-text">
-                    Detailed case study coming soon. This project will describe the data
-                    reconciliation process and the efficiency gains achieved.
+                    Designed GTM analytics models integrating sales, logistics, and pricing data
+                    to generate strategic recommendations for high-growth markets.
                 </p>
                 <div class="project-tags">
                     <span class="project-tag">Power BI</span>
-                    <span class="project-tag">Looker Studio</span>
+                    <span class="project-tag">SQL</span>
+                    <span class="project-tag">Market Intelligence</span>
                 </div>
                 <div class="project-impact placeholder-text">
-                    Full impact metrics coming soon.
+                    Supported strategic counter-actions and market expansion decisions.
                 </div>
             </div>
         </div>
@@ -1185,59 +1188,65 @@
         </div>
         <div class="skills-grid">
             <div class="skill-group reveal">
-                <h3>Data Analytics & Visualization</h3>
+                <h3>BI & Visualization</h3>
                 <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>Power BI</span><span class="pct-placeholder">90%</span></div>
+                    <div class="skill-bar-label"><span>Power BI (DAX, Power Query)</span><span class="pct-placeholder">92%</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-label"><span>Microsoft Excel (Pivot, Advanced Formulas)</span><span class="pct-placeholder">90%</span></div>
                     <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
                 </div>
                 <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>Microsoft Excel</span><span class="pct-placeholder">90%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>Looker Studio</span><span class="pct-placeholder">80%</span></div>
+                    <div class="skill-bar-label"><span>Looker Studio (Google Data Studio)</span><span class="pct-placeholder">80%</span></div>
                     <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
                 </div>
                 <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>Dashboard Design</span><span class="pct-placeholder">85%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+                    <div class="skill-bar-label"><span>Dashboard Design & KPI Tracking</span><span class="pct-placeholder">88%</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
                 </div>
             </div>
             <div class="skill-group reveal">
-                <h3>Data Management</h3>
+                <h3>Data Analysis</h3>
                 <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>Master Data Management</span><span class="pct-placeholder">90%</span></div>
+                    <div class="skill-bar-label"><span>SQL</span><span class="pct-placeholder">78%</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-label"><span>Data Cleaning & Reconciliation</span><span class="pct-placeholder">90%</span></div>
                     <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
                 </div>
                 <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>Data Governance</span><span class="pct-placeholder">85%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+                    <div class="skill-bar-label"><span>Gap & Root Cause Analysis</span><span class="pct-placeholder">88%</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
                 </div>
                 <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>Gap & Root Cause Analysis</span><span class="pct-placeholder">85%</span></div>
+                    <div class="skill-bar-label"><span>Trend Analysis</span><span class="pct-placeholder">85%</span></div>
                     <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-label"><span>SLA Management</span><span class="pct-placeholder">90%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
                 </div>
             </div>
         </div>
         <div class="skill-tags-section reveal">
-            <h3>Also fluent in</h3>
+            <h3>Business Domains & Tools</h3>
             <div class="skill-tags">
+                <span class="skill-tag">Sales Analytics</span>
+                <span class="skill-tag">GTM Analytics</span>
+                <span class="skill-tag">Dealer & Channel Analytics</span>
+                <span class="skill-tag">Pricing & Margin Analysis</span>
+                <span class="skill-tag">Market Intelligence</span>
                 <span class="skill-tag">MIS Reporting</span>
+                <span class="skill-tag">Data Governance</span>
+                <span class="skill-tag">SLA Management</span>
+                <span class="skill-tag">Stakeholder Management</span>
+                <span class="skill-tag">Process Automation</span>
+                <span class="skill-tag">Automated Reporting</span>
+                <span class="skill-tag">Ticket Management</span>
                 <span class="skill-tag">Microsoft Access</span>
                 <span class="skill-tag">PowerPoint</span>
                 <span class="skill-tag">Word</span>
                 <span class="skill-tag">Outlook</span>
-                <span class="skill-tag">Ticket Management</span>
-                <span class="skill-tag">Stakeholder Management</span>
-                <span class="skill-tag">Communication</span>
-                <span class="skill-tag">Problem Solving</span>
-                <span class="skill-tag">Training & Documentation</span>
-                <span class="skill-tag">Storytelling</span>
-                <span class="skill-tag">Analytical Thinking</span>
+                <span class="skill-tag">Windows 10/11</span>
+                <span class="skill-tag">macOS</span>
             </div>
         </div>
     </section>
@@ -1258,8 +1267,8 @@
                 <p>Efficiency Improvement</p>
             </div>
             <div class="stat-item reveal">
-                <h2><span class="counter" data-target="25">0</span>+</h2>
-                <p>Cross-Functional Projects</p>
+                <h2><span class="counter" data-target="48">0</span>h</h2>
+                <p>Territory Insight Window</p>
             </div>
             <div class="stat-item reveal">
                 <h2><span class="counter" data-target="100">0</span>%</h2>
@@ -1280,7 +1289,7 @@
                     <span class="gallery-dot red"></span>
                     <span class="gallery-dot yellow"></span>
                     <span class="gallery-dot green"></span>
-                    <span class="gallery-title">sales_dashboard.pbix</span>
+                    <span class="gallery-title">sales_kpi_dashboard.pbix</span>
                 </div>
                 <div class="gallery-body">
                     <div class="gallery-placeholder">
@@ -1294,7 +1303,7 @@
                     <span class="gallery-dot red"></span>
                     <span class="gallery-dot yellow"></span>
                     <span class="gallery-dot green"></span>
-                    <span class="gallery-title">master_data_view.pbix</span>
+                    <span class="gallery-title">dealer_scorecards.pbix</span>
                 </div>
                 <div class="gallery-body">
                     <div class="gallery-placeholder">
@@ -1308,7 +1317,7 @@
                     <span class="gallery-dot red"></span>
                     <span class="gallery-dot yellow"></span>
                     <span class="gallery-dot green"></span>
-                    <span class="gallery-title">reporting_overview.pbix</span>
+                    <span class="gallery-title">gtm_analytics.pbix</span>
                 </div>
                 <div class="gallery-body">
                     <div class="gallery-placeholder">
@@ -1362,12 +1371,12 @@
             <h2 class="scene-title">Get In Touch</h2>
         </div>
         <p class="contact-desc reveal">
-            I'm open to opportunities in data analysis, MIS, and reporting roles.
+            I'm open to opportunities in Data Analysis, Business Intelligence, and MIS roles.
             Let's talk about how I can turn your data into a competitive advantage.
         </p>
         <div class="contact-links reveal">
-            <a href="mailto:BaishyaRaajdeep@gmail.com">📧 BaishyaRaajdeep@gmail.com</a>
-            <a href="https://www.linkedin.com/in/raajdeep-baishya" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:BaishyaRaaideep@gmail.com">📧 BaishyaRaaideep@gmail.com</a>
+            <a href="https://www.linkedin.com/in/raajdeep-baishya-1a0a252b2" target="_blank">🔗 LinkedIn</a>
             <a href="tel:+919707599924">📞 +91 9707599924</a>
         </div>
     </section>
@@ -1383,7 +1392,7 @@
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('preloader').classList.add('hidden');
-            }, 4000); // 4 seconds to let the signature finish writing
+            }, 4000);
         });
 
         // ============================================
@@ -1525,7 +1534,7 @@
         // ============================================
         // TYPING EFFECT
         // ============================================
-        const titles = ["Data Analyst", "MIS Specialist", "Power BI Expert", "Problem Solver"];
+        const titles = ["Data Analyst", "Power BI Developer", "MIS Specialist", "Business Intelligence"];
         let titleIndex = 0, charIndex = 0, isDeleting = false;
         const typingEl = document.getElementById("typing");
 
